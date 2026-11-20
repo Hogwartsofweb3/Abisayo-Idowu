@@ -1,0 +1,1353 @@
+/* ==========================================================================
+   Abisayo Idowu, AICMC — Legal Portfolio
+   Aesthetic: Page Law (Toronto) Editorial Elegance + "The Law" Nigerian Jurisprudence
+   ========================================================================== */
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Color Palette */
+  --bg-dark: #0a111c;
+  --bg-dark-secondary: #101c2e;
+  --bg-dark-card: #142236;
+  --bg-light: #ffffff;
+  --bg-light-alt: #f8fafc;
+  --bg-light-card: #ffffff;
+  
+  --text-dark-primary: #ffffff;
+  --text-dark-secondary: #94a3b8;
+  --text-dark-muted: #64748b;
+
+  --text-light-primary: #0f172a;
+  --text-light-secondary: #334155;
+  --text-light-muted: #64748b;
+
+  --accent-gold: #c59b27;
+  --accent-gold-light: #e5b945;
+  --accent-gold-dark: #9a781b;
+  --accent-burgundy: #4a121a;
+  --accent-slate-blue: #233b5d;
+
+  --border-light: rgba(15, 23, 42, 0.08);
+  --border-dark: rgba(255, 255, 255, 0.12);
+
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-light-primary);
+  background-color: var(--bg-light);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+/* Utility Containers */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* ==========================================================================
+   Navigation Bar (Page Law Style)
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition-smooth);
+  background: transparent;
+  padding: 1.5rem 0;
+}
+
+.site-header.scrolled {
+  background: rgba(10, 17, 28, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-dark);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.brand-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-top: -2px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--accent-gold);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.btn-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  color: #0a111c;
+  border: 1px solid #ffffff;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-header:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+/* ==========================================================================
+   Hero Section (Matching Page Law Screenshot - Image 1)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-dark);
+  color: var(--text-dark-primary);
+  overflow: hidden;
+  padding-top: 5rem;
+}
+
+.hero-background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 80% 20%;
+}
+
+/* Moody Left-to-Right & Radial Vignette Overlay for Crisp Typography */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 17, 28, 0.96) 0%,
+    rgba(10, 17, 28, 0.88) 42%,
+    rgba(10, 17, 28, 0.45) 70%,
+    rgba(10, 17, 28, 0.1) 100%
+  );
+  z-index: 2;
+}
+
+.hero-bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(to top, rgba(10, 17, 28, 0.95), transparent);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 680px;
+  padding: 4rem 0 3rem;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-gold-light);
+  margin-bottom: 1.25rem;
+}
+
+.hero-eyebrow-line {
+  width: 24px;
+  height: 1.5px;
+  background-color: var(--accent-gold);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero-phone {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.hero-phone:hover {
+  color: var(--accent-gold-light);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+/* Sharp Page Law Primary Rectangular Button */
+.btn-primary-sharp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.2rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  color: #0a111c;
+  border: 2px solid #ffffff;
+  border-radius: 0px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary-sharp:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-secondary-sharp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 0px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary-sharp:hover {
+  border-color: var(--accent-gold-light);
+  color: var(--accent-gold-light);
+  background-color: rgba(197, 155, 39, 0.08);
+}
+
+.hero-meta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.meta-pill {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.35rem 0.85rem;
+  backdrop-filter: blur(4px);
+}
+
+.meta-pill.highlight {
+  border-color: rgba(197, 155, 39, 0.4);
+  color: #f1dfa8;
+  background: rgba(197, 155, 39, 0.12);
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.25rem;
+  animation: bounce 2s infinite;
+  transition: var(--transition-smooth);
+}
+
+.hero-scroll-indicator:hover {
+  color: #ffffff;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -8px); }
+  60% { transform: translate(-50%, -4px); }
+}
+
+/* ==========================================================================
+   Intro Statement Section (Page Law Quote Style)
+   ========================================================================== */
+.statement-section {
+  padding: 6.5rem 0 5.5rem;
+  background-color: #ffffff;
+  color: var(--text-light-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.statement-lead {
+  font-family: var(--font-sans);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: #27364a;
+  margin-bottom: 2rem;
+}
+
+.statement-divider {
+  width: 70px;
+  height: 2px;
+  background-color: var(--accent-gold);
+  margin-bottom: 2rem;
+}
+
+.statement-sub {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-light-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.statement-highlight {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.3vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0b1320;
+  border-left: 3px solid var(--accent-gold);
+  padding-left: 1.5rem;
+}
+
+/* ==========================================================================
+   Sources of Nigerian Law Marquee (Inspired by "The Law")
+   ========================================================================== */
+.ticker-section {
+  background-color: #0d1522;
+  color: #ffffff;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ticker-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-gold-light);
+  white-space: nowrap;
+  padding-left: 2rem;
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+
+.marquee-content {
+  display: inline-flex;
+  gap: 2.5rem;
+  animation: scroll-marquee 32s linear infinite;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.marquee-item .dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--accent-gold);
+  border-radius: 50%;
+}
+
+@keyframes scroll-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   Practice Areas / Expertise Section (Page Law Split & 2-Col Layout)
+   ========================================================================== */
+.practice-section {
+  background-color: #101c2e;
+  color: #ffffff;
+  padding: 7rem 0;
+}
+
+.section-header-centered {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 4.5rem;
+}
+
+.section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-gold-light);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-title-white {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+.section-subtitle-white {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #94a3b8;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.practice-card {
+  background: #142236;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2.5rem;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.practice-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background-color: var(--accent-gold);
+  transition: height 0.3s ease;
+}
+
+.practice-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(197, 155, 39, 0.4);
+  background: #182942;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.practice-card:hover::before {
+  height: 100%;
+}
+
+.practice-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.practice-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background: rgba(197, 155, 39, 0.12);
+  border: 1px solid rgba(197, 155, 39, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold-light);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.practice-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.practice-desc {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.practice-authorities {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.authority-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #f1dfa8;
+  display: inline-block;
+  background: rgba(197, 155, 39, 0.1);
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Editorial Pull-Quote (Burgundy Banner like Page Law)
+   ========================================================================== */
+.quote-banner {
+  background-color: var(--accent-burgundy);
+  color: #ffffff;
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.quote-banner-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+  color: #fce7eb;
+}
+
+.quote-banner-author {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================================================
+   About Section (Page Law 2-Column Editorial with Portrait)
+   ========================================================================== */
+.about-section {
+  padding: 7.5rem 0;
+  background-color: #ffffff;
+  color: var(--text-light-primary);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-image-frame {
+  position: relative;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.about-image-frame img {
+  width: 100%;
+  height: auto;
+  filter: contrast(1.03);
+}
+
+.about-award-badge {
+  position: absolute;
+  bottom: -1.25rem;
+  right: -1.25rem;
+  background-color: #0b1320;
+  color: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  max-width: 250px;
+}
+
+.award-badge-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 0.35rem;
+}
+
+.award-badge-desc {
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.about-content {
+  padding-left: 1rem;
+}
+
+.about-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #0b1320;
+  margin-bottom: 1.5rem;
+}
+
+.about-lead {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.about-body {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+.about-credentials-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.credential-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.credential-icon {
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.credential-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.credential-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   Experience & Internships Timeline
+   ========================================================================== */
+.experience-section {
+  background-color: var(--bg-light-alt);
+  padding: 7rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.timeline {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background-color: #cbd5e1;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 3.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 11px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 3px solid var(--accent-gold);
+  box-shadow: 0 0 0 4px rgba(197, 155, 39, 0.15);
+  z-index: 2;
+}
+
+.timeline-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 2rem 2.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: var(--transition-smooth);
+}
+
+.timeline-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(197, 155, 39, 0.3);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-role {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0b1320;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--accent-gold-dark);
+}
+
+.timeline-org {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.timeline-duties {
+  list-style: none;
+}
+
+.timeline-duty {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.65;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-duty::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold);
+}
+
+/* ==========================================================================
+   Notable Research & Academic Honors (Inspired by Page Law Notable Judgments)
+   ========================================================================== */
+.honors-section {
+  padding: 7rem 0;
+  background-color: #ffffff;
+}
+
+.honors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.honor-card {
+  border: 1px solid var(--border-light);
+  padding: 2.25rem;
+  background-color: #ffffff;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.honor-card:hover {
+  border-color: #0b1320;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.honor-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-gold-dark);
+  margin-bottom: 0.75rem;
+}
+
+.honor-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0b1320;
+  margin-bottom: 1rem;
+}
+
+.honor-body {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 1.25rem;
+}
+
+.honor-citation {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #64748b;
+  border-top: 1px solid var(--border-light);
+  padding-top: 0.75rem;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   The Law Verification Deep-Dive Section
+   ========================================================================== */
+.verification-section {
+  background-color: #0a111c;
+  color: #ffffff;
+  padding: 6.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.verification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.verification-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.verification-box:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(197, 155, 39, 0.35);
+}
+
+.verification-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-gold-light);
+  margin-bottom: 1rem;
+}
+
+.verification-box-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.verification-box-desc {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Contact / Consultation Section (Page Law Style)
+   ========================================================================== */
+.contact-section {
+  padding: 7.5rem 0 5rem;
+  background-color: #f8fafc;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
+}
+
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 700;
+  color: #0b1320;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.contact-lead-desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #475569;
+  margin-bottom: 2.5rem;
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold-dark);
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.contact-detail-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 0.2rem;
+}
+
+.contact-detail-val {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0b1320;
+}
+
+.social-links-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  color: #0f172a;
+  transition: var(--transition-smooth);
+}
+
+.social-btn:hover {
+  border-color: #0f172a;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+/* Contact Form */
+.contact-form-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0f172a;
+  border-radius: 0px;
+  transition: var(--transition-smooth);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #0b1320;
+  box-shadow: 0 0 0 3px rgba(11, 19, 32, 0.1);
+}
+
+.btn-submit-sharp {
+  width: 100%;
+  padding: 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background-color: #0b1320;
+  color: #ffffff;
+  border: 2px solid #0b1320;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-submit-sharp:hover {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #0b1320;
+}
+
+/* ==========================================================================
+   Global Footer (Page Law Grey Tone)
+   ========================================================================== */
+.site-footer {
+  background-color: #1a2432;
+  color: #ffffff;
+  padding: 4.5rem 0 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand-sub {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+.footer-col-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-gold-light);
+  margin-bottom: 1.25rem;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-nav-link {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  transition: var(--transition-smooth);
+}
+
+.footer-nav-link:hover {
+  color: #ffffff;
+  padding-left: 4px;
+}
+
+.footer-disclaimer-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-disclaimer-text {
+  font-size: 0.75rem;
+  color: #64748b;
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 992px) {
+  .nav-menu,
+  .btn-header {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .about-image-wrapper {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero-content {
+    padding: 3rem 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .btn-primary-sharp,
+  .btn-secondary-sharp {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-credentials-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card {
+    padding: 1.75rem;
+  }
+}
