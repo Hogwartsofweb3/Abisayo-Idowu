@@ -292,7 +292,7 @@ section[id], div[id] {
 }
 
 /* ==========================================================================
-   Hero Section (Matching Page Law Screenshot - Image 1)
+   Hero Section (Expanded Presence - Spread Out Leftward)
    ========================================================================== */
 .hero-section {
   position: relative;
@@ -302,7 +302,7 @@ section[id], div[id] {
   background-color: var(--bg-dark);
   color: var(--text-dark-primary);
   overflow: hidden;
-  padding-top: 7rem;
+  padding-top: 6.5rem;
 }
 
 .hero-background-wrapper {
@@ -318,9 +318,10 @@ section[id], div[id] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 80% 20%;
+  object-position: 65% center;
 }
 
+/* Atmospheric Multi-stop Gradient: lets her warm architectural setting shine through while keeping text 100% legible */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -329,10 +330,10 @@ section[id], div[id] {
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(10, 17, 28, 0.98) 0%,
-    rgba(10, 17, 28, 0.92) 40%,
-    rgba(10, 17, 28, 0.5) 70%,
-    rgba(10, 17, 28, 0.15) 100%
+    rgba(10, 17, 28, 0.95) 0%,
+    rgba(10, 17, 28, 0.88) 32%,
+    rgba(10, 17, 28, 0.45) 55%,
+    rgba(10, 17, 28, 0.1) 85%
   );
   z-index: 2;
 }
@@ -342,7 +343,7 @@ section[id], div[id] {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 180px;
+  height: 160px;
   background: linear-gradient(to top, rgba(10, 17, 28, 0.98), transparent);
   z-index: 2;
 }
@@ -350,7 +351,7 @@ section[id], div[id] {
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 680px;
+  max-width: 660px;
   padding: 3rem 0;
 }
 
@@ -374,7 +375,7 @@ section[id], div[id] {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-size: clamp(3rem, 5.8vw, 5rem);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.01em;
@@ -456,28 +457,36 @@ section[id], div[id] {
   transform: translateY(-2px);
 }
 
-.hero-meta-badges {
+/* Executive Editorial Credentials Strip (Replaced AI-looking stacked boxes) */
+.hero-credentials-strip {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba(14, 23, 38, 0.7);
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  backdrop-filter: blur(12px);
+  border-left: 3px solid var(--accent-gold);
+  max-width: 620px;
 }
 
-.meta-pill {
-  font-size: 0.76rem;
+.strip-item {
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.85);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0.4rem 0.9rem;
-  backdrop-filter: blur(8px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.meta-pill.highlight {
-  border-color: rgba(197, 155, 39, 0.5);
-  color: #f1dfa8;
-  background: rgba(197, 155, 39, 0.15);
+.strip-item.gold {
+  color: var(--accent-gold-light);
+  font-weight: 700;
+}
+
+.strip-dot {
+  color: var(--accent-gold);
+  font-size: 0.75rem;
 }
 
 .hero-scroll-indicator {
@@ -546,6 +555,54 @@ section[id], div[id] {
 }
 
 /* ==========================================================================
+   Authoritative Metric Counters (Animation "She Knows What She's Doing")
+   ========================================================================== */
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.metric-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: var(--bg-light-alt);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.metric-number {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  color: #0b1320;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.metric-number.gold {
+  color: var(--accent-gold-dark);
+}
+
+.metric-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+/* ==========================================================================
    Sources of Nigerian Law Marquee (from "The Law")
    ========================================================================== */
 .ticker-section {
@@ -608,7 +665,7 @@ section[id], div[id] {
 }
 
 /* ==========================================================================
-   Practice Areas / Expertise Section (Page Law Card Grid)
+   Practice Areas / Expertise Section (with 3D Card Hover & Tooltip Animation)
    ========================================================================== */
 .practice-section {
   background-color: #0f1a2a;
@@ -663,6 +720,7 @@ section[id], div[id] {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  border-radius: 2px;
 }
 
 .practice-card::before {
@@ -678,9 +736,9 @@ section[id], div[id] {
 
 .practice-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(197, 155, 39, 0.45);
+  border-color: rgba(197, 155, 39, 0.5);
   background: #18283f;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
 }
 
 .practice-card:hover::before {
@@ -698,6 +756,12 @@ section[id], div[id] {
   color: var(--accent-gold-light);
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.practice-card:hover .practice-icon-wrapper {
+  background: var(--accent-gold);
+  color: #0b1320;
 }
 
 .practice-title {
@@ -721,7 +785,9 @@ section[id], div[id] {
   margin-top: auto;
 }
 
+/* Authority Tooltip Animation (Demonstrates Rigorous Legal Competence) */
 .authority-tag {
+  position: relative;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -729,10 +795,46 @@ section[id], div[id] {
   color: #f1dfa8;
   display: inline-block;
   background: rgba(197, 155, 39, 0.12);
-  padding: 0.25rem 0.6rem;
+  padding: 0.25rem 0.65rem;
   margin-right: 0.4rem;
   margin-bottom: 0.4rem;
   border-radius: 2px;
+  cursor: help;
+  transition: var(--transition-smooth);
+}
+
+.authority-tag:hover {
+  background: rgba(197, 155, 39, 0.3);
+  color: #ffffff;
+}
+
+.authority-tag .citation-tip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #0b1320;
+  color: #ffffff;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  white-space: nowrap;
+  border: 1px solid var(--accent-gold);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  z-index: 10;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.authority-tag:hover .citation-tip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* ==========================================================================
@@ -1417,6 +1519,10 @@ section[id], div[id] {
     grid-template-columns: 1fr;
   }
 
+  .metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 3.5rem;
@@ -1459,6 +1565,10 @@ section[id], div[id] {
   }
 
   .about-credentials-list {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-strip {
     grid-template-columns: 1fr;
   }
 

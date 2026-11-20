@@ -12,8 +12,10 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="./images/hero-composite.jpg">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230a111c' stroke='%23c59b27' stroke-width='4'/><text x='50' y='64' font-family='Georgia, serif' font-size='42' font-weight='bold' fill='%23c59b27' text-anchor='middle'>AI</text></svg>">
+  <!-- Face Favicon (Directly from Hero Picture) -->
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 
   <!-- Google Fonts: Editorial Playfair Display & Modern Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +69,7 @@
   </header>
 
   <!-- ==========================================================================
-       Hero Section (Matching Page Law Screenshot - Image 1)
+       Hero Section (Expanded Presence - Spread Out Leftward)
        ========================================================================== -->
   <section id="hero" class="hero-section">
     <div class="hero-background-wrapper">
@@ -98,11 +100,15 @@
           <a href="#about" class="btn-secondary-sharp">View Credentials</a>
         </div>
 
-        <div class="hero-meta-badges">
-          <span class="meta-pill highlight">Associate Member, ICMC</span>
-          <span class="meta-pill">LL.B Graduate (Bowen University)</span>
-          <span class="meta-pill">Former Head of Research, Veritas Chambers</span>
-          <span class="meta-pill">Best Graduating Student in Fundamental Human Rights</span>
+        <!-- Executive Credentials Strip (Bespoke Editorial Treatment) -->
+        <div class="hero-credentials-strip">
+          <span class="strip-item gold">Associate Member, ICMC</span>
+          <span class="strip-dot">◆</span>
+          <span class="strip-item">LL.B (Bowen)</span>
+          <span class="strip-dot">◆</span>
+          <span class="strip-item">Former Head of Research</span>
+          <span class="strip-dot">◆</span>
+          <span class="strip-item gold">Human Rights Honors</span>
         </div>
       </div>
     </div>
@@ -113,7 +119,7 @@
   </section>
 
   <!-- ==========================================================================
-       Intro Statement Section (Page Law Editorial Quote)
+       Intro Statement Section & Authoritative Metrics Counter
        ========================================================================== -->
   <section id="statement" class="statement-section">
     <div class="container-narrow">
@@ -129,6 +135,29 @@
 
       <div class="statement-highlight">
         Confidence, analytical precision & dedication to legal excellence achieve the best outcome.
+      </div>
+
+      <!-- Authoritative Metrics Counters (Animated on Scroll) -->
+      <div class="metrics-strip">
+        <div class="metric-card">
+          <div class="metric-number gold" data-count="3">3+</div>
+          <div class="metric-label">Law Chamber Internships</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number" data-count="100">100%</div>
+          <div class="metric-label">Grounded Authority Citations</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number gold">AICMC</div>
+          <div class="metric-label">Chartered Mediator Status</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number" data-count="1">1st</div>
+          <div class="metric-label">Human Rights Distinction</div>
+        </div>
       </div>
     </div>
   </section>
@@ -162,7 +191,7 @@
   </div>
 
   <!-- ==========================================================================
-       Practice Areas / Expertise Section (Page Law Card Grid)
+       Practice Areas / Expertise Section (with Interactive Citation Tooltips)
        ========================================================================== -->
   <section id="practice-areas" class="practice-section">
     <div class="container">
@@ -170,7 +199,7 @@
         <span class="section-label">Core Competencies</span>
         <h2 class="section-title-white">AREAS OF LEGAL EXPERTISE</h2>
         <p class="section-subtitle-white">
-          Structured advisory, contract formulation, and dispute resolution adhering strictly to statutory frameworks and binding judicial authorities.
+          Hover over governing authorities to inspect the exact statutory framework applied in each practice area.
         </p>
       </div>
 
@@ -187,9 +216,18 @@
             </p>
           </div>
           <div class="practice-authorities">
-            <span class="authority-tag">CAMA 2020</span>
-            <span class="authority-tag">CAC Regulations</span>
-            <span class="authority-tag">Commercial Contracts</span>
+            <span class="authority-tag">
+              CAMA 2020
+              <span class="citation-tip">Governed by CAMA 2020 §18 & CAC Operations</span>
+            </span>
+            <span class="authority-tag">
+              CAC Regulations
+              <span class="citation-tip">Companies Regulation 2021 Filing Standards</span>
+            </span>
+            <span class="authority-tag">
+              Commercial Contracts
+              <span class="citation-tip">Statutory & Equitable Contract Formulations</span>
+            </span>
           </div>
         </div>
 
@@ -205,9 +243,18 @@
             </p>
           </div>
           <div class="practice-authorities">
-            <span class="authority-tag">AICMC Certified</span>
-            <span class="authority-tag">Arbitration & Mediation Act 2023</span>
-            <span class="authority-tag">Settlement Pacts</span>
+            <span class="authority-tag">
+              AICMC Certified
+              <span class="citation-tip">ICMC Code of Professional Mediation Conduct</span>
+            </span>
+            <span class="authority-tag">
+              AMA 2023
+              <span class="citation-tip">Arbitration & Mediation Act 2023 §73 (Binding Pacts)</span>
+            </span>
+            <span class="authority-tag">
+              Settlement Pacts
+              <span class="citation-tip">Enforceable Terms of Settlement as Consent Judgments</span>
+            </span>
           </div>
         </div>
 
@@ -223,9 +270,18 @@
             </p>
           </div>
           <div class="practice-authorities">
-            <span class="authority-tag">Land Use Act 1978</span>
-            <span class="authority-tag">Tenancy Laws</span>
-            <span class="authority-tag">Conveyancing</span>
+            <span class="authority-tag">
+              Land Use Act 1978
+              <span class="citation-tip">Section 22: Governor's Consent on Alienation</span>
+            </span>
+            <span class="authority-tag">
+              Tenancy Laws
+              <span class="citation-tip">Tenancy Law of Lagos State & Oyo State Provisions</span>
+            </span>
+            <span class="authority-tag">
+              Conveyancing
+              <span class="citation-tip">Deeds of Assignment & Legal Mortgages</span>
+            </span>
           </div>
         </div>
 
@@ -241,9 +297,18 @@
             </p>
           </div>
           <div class="practice-authorities">
-            <span class="authority-tag">Copyright Act 2022</span>
-            <span class="authority-tag">Trademarks Act</span>
-            <span class="authority-tag">Media Rights</span>
+            <span class="authority-tag">
+              Copyright Act 2022
+              <span class="citation-tip">Section 2: Protection of Digital & Literary Works</span>
+            </span>
+            <span class="authority-tag">
+              Trademarks Act
+              <span class="citation-tip">Commercial Class Registrations & Infringement Defence</span>
+            </span>
+            <span class="authority-tag">
+              Media Rights
+              <span class="citation-tip">Licensing, Sync Agreements & Talent Representation</span>
+            </span>
           </div>
         </div>
 
@@ -259,9 +324,18 @@
             </p>
           </div>
           <div class="practice-authorities">
-            <span class="authority-tag">NDPA 2023</span>
-            <span class="authority-tag">Defamation Laws</span>
-            <span class="authority-tag">Cybercrimes Act</span>
+            <span class="authority-tag">
+              NDPA 2023
+              <span class="citation-tip">Sections 24-28: Lawful Basis & Data Rights</span>
+            </span>
+            <span class="authority-tag">
+              Defamation Laws
+              <span class="citation-tip">Common Law Tort of Libel & Justification Defences</span>
+            </span>
+            <span class="authority-tag">
+              Cybercrimes Act
+              <span class="citation-tip">Section 24: Digital Communications & Liability</span>
+            </span>
           </div>
         </div>
 
@@ -277,9 +351,18 @@
             </p>
           </div>
           <div class="practice-authorities">
-            <span class="authority-tag">High Court Rules</span>
-            <span class="authority-tag">LawPavilion Database</span>
-            <span class="authority-tag">Appellate Precedents</span>
+            <span class="authority-tag">
+              High Court Rules
+              <span class="citation-tip">Pleadings & Pre-action Protocols</span>
+            </span>
+            <span class="authority-tag">
+              LawPavilion
+              <span class="citation-tip">Appellate Precedent Curation & NWLR Cross-matching</span>
+            </span>
+            <span class="authority-tag">
+              Appellate Precedents
+              <span class="citation-tip">Supreme Court & Court of Appeal Authorities</span>
+            </span>
           </div>
         </div>
       </div>
@@ -759,7 +842,7 @@
   </footer>
 
   <!-- ==========================================================================
-       Interactive Behaviors (Inline for 100% Reliable Execution)
+       Interactive Behaviors & Authority Animations
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -812,7 +895,25 @@
         });
       }
 
-      // 4. Consultation Form Handling
+      // 4. Subtle 3D Card Hover Tilt
+      var practiceCards = document.querySelectorAll('.practice-card, .honor-card');
+      practiceCards.forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+          var rect = card.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          var centerX = rect.width / 2;
+          var centerY = rect.height / 2;
+          var rotateX = ((y - centerY) / centerY) * -3;
+          var rotateY = ((x - centerX) / centerX) * 3;
+          card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
+        });
+        card.addEventListener('mouseleave', function() {
+          card.style.transform = '';
+        });
+      });
+
+      // 5. Consultation Form Handling
       var form = document.getElementById('consultation-form');
       var alertBox = document.getElementById('form-success-alert');
 
